@@ -1,5 +1,6 @@
 const isProd = process.argv.includes('--production')
 const isDev = !process.argv.includes('--production')
+const webpackConfig = require('./webpack.config')
 
 module.exports = {
   isProd,
@@ -12,9 +13,7 @@ module.exports = {
     pretty: isDev,
   },
 
-  webpack: {
-    mode: isProd ? 'production' : 'development',
-  },
+  webpack: webpackConfig,
 
   imagemin: {
     verbose: true,

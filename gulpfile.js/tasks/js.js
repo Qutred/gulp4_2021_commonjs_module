@@ -1,4 +1,5 @@
-const webpack = require('webpack-stream')
+const webpackStream = require('webpack-stream')
+const webpack = require('webpack')
 
 const js = () => {
   return $.gulp
@@ -12,7 +13,7 @@ const js = () => {
       })
     )
     .pipe($.gp.babel())
-    .pipe(webpack($.app.webpack))
+    .pipe(webpackStream($.app.webpack, webpack))
     .pipe($.gulp.dest($.path.js.dest, { sourcemaps: $.app.isDev }))
 }
 

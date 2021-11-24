@@ -1,3 +1,4 @@
 const sum = require('./sum')
 
-console.log(sum(2, 3))
+const [a, b] = [2, 2]
+console.log(sum(a, b))
